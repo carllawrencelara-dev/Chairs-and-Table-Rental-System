@@ -1,0 +1,93 @@
+-- ==============================================
+-- DATABASE: ct_rental_system
+-- ==============================================
+
+CREATE DATABASE IF NOT EXISTS ct_rental_system;
+USE ct_rental_system;
+
+-- ==============================================
+-- TABLE: admin_users
+-- ==============================================
+DROP TABLE IF EXISTS admin_users;
+CREATE TABLE admin_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    reset_token VARCHAR(255) DEFAULT NULL,
+    reset_expires DATETIME DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ==============================================
+-- TABLE: bookings
+-- ==============================================
+DROP TABLE IF EXISTS bookings;
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_ref VARCHAR(20) NOT NULL UNIQUE,
+    customer_name VARCHAR(100) NOT NULL,
+    customer_contact VARCHAR(20) NOT NULL,
+    event_date DATE NOT NULL,
+    event_time TIME NOT NULL,
+    venue_location TEXT NOT NULL,
+    event_type VARCHAR(50) DEFAULT NULL,
+    chairs INT DEFAULT 0,
+    tables INT DEFAULT 0,
+    delivery_type VARCHAR(20) DEFAULT 'pickup',
+    distance_km DECIMAL(10,2) DEFAULT 0,
+    chair_cost DECIMAL(10,2) DEFAULT 0,
+    table_cost DECIMAL(10,2) DEFAULT 0,
+    labor_cost DECIMAL(10,2) DEFAULT 0,
+    fuel_cost DECIMAL(10,2) DEFAULT 0,
+    total_amount DECIMAL(10,2) DEFAULT 0,
+    id_file_path VARCHAR(255) DEFAULT NULL,
+    status ENUM('pending', 'accepted', 'completed', 'cancelled') DEFAULT 'pending',
+    is_read TINYINT(1) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_status (status),
+    INDEX idx_event_date (event_date),
+    INDEX idx_booking_ref (booking_ref)
+);
+
+-- ==============================================
+-- DEFAULT ADMIN ACCOUNT
+-- ==============================================
+-- Email: admin@ctrental.com | Password: Admin123
+INSERT INTO admin_users (fullname, email, password) 
+VALUES ('System Administrator', 'admin@ctrental.com', MD5('Admin123'))
+ON DUPLICATE KEY UPDATE fullname = fullname;
+
+-- ==============================================
+-- SAMPLE BOOKINGS WITH DIFFERENT STATUSES
+-- ==============================================
+
+-- Completed Bookings (2 records)
+INSERT INTO bookings (booking_ref, customer_name, customer_contact, event_date, event_time, venue_location, event_type, chairs, tables, delivery_type, distance_km, chair_cost, table_cost, labor_cost, fuel_cost, total_amount, status, is_read) VALUES
+('CTR-2025001', 'Maria Santos', '09171234567', DATE_ADD(CURDATE(), INTERVAL -10 DAY), '09:00:00', 'Cebu City Sports Complex', 'Wedding', 200, 30, 'delivery', 5.00, 5000, 3600, 750, 250, 9600, 'completed', 1),
+('CTR-2025003', 'Ana Reyes', '09391234567', DATE_ADD(CURDATE(), INTERVAL -5 DAY), '08:00:00', 'Lapu-Lapu City', 'Corporate Event', 100, 20, 'pickup', 0, 2500, 2400, 0, 0, 4900, 'completed', 1);
+
+-- Accepted Bookings (5 records)
+INSERT INTO bookings (booking_ref, customer_name, customer_contact, event_date, event_time, venue_location, event_type, chairs, tables, delivery_type, distance_km, chair_cost, table_cost, labor_cost, fuel_cost, total_amount, status, is_read) VALUES
+('CTR-2025002', 'John Dela Cruz', '09281234567', DATE_ADD(CURDATE(), INTERVAL 5 DAY), '14:00:00', 'Mandaue City Hall', 'Birthday Party', 50, 10, 'delivery', 8.00, 1250, 1200, 300, 400, 3150, 'accepted', 1),
+('CTR-2025005', 'Carmen Lee', '09451234567', DATE_ADD(CURDATE(), INTERVAL 3 DAY), '11:00:00', 'Mactan Newtown', 'Wedding', 150, 25, 'delivery', 15.00, 3750, 3000, 750, 750, 8250, 'accepted', 1),
+('CTR-2025007', 'Wilma Baliad', '09979617002', DATE_ADD(CURDATE(), INTERVAL 4 DAY), '14:00:00', 'Sogod Cebu', 'Wedding', 30, 10, 'pickup', 0, 750, 1200, 0, 0, 1950, 'accepted', 1),
+('CTR-2025008', 'Rose Marie', '09979617003', DATE_ADD(CURDATE(), INTERVAL 1 DAY), '10:00:00', 'Sogod Cebu', 'Graduation', 40, 15, 'delivery', 3.00, 1000, 1800, 300, 150, 3250, 'accepted', 1),
+('CTR-2025009', 'Jay Chel Calope', '09979617004', DATE_ADD(CURDATE(), INTERVAL 6 DAY), '09:00:00', 'Sogod Cebu', 'Corporate Event', 25, 8, 'pickup', 0, 625, 960, 0, 0, 1585, 'accepted', 1);
+
+-- Pending Bookings (2 records)
+INSERT INTO bookings (booking_ref, customer_name, customer_contact, event_date, event_time, venue_location, event_type, chairs, tables, delivery_type, distance_km, chair_cost, table_cost, labor_cost, fuel_cost, total_amount, status, is_read) VALUES
+('CTR-2025006', 'Angel Ann Baliad', '09979617001', DATE_ADD(CURDATE(), INTERVAL 2 DAY), '12:00:00', 'Sogod Cebu', 'Birthday Party', 50, 20, 'delivery', 2.00, 1250, 2400, 300, 100, 4050, 'pending', 0),
+('CTR-2025010', 'Mary Rose', '09912204567', DATE_ADD(CURDATE(), INTERVAL 7 DAY), '12:00:00', 'Brgy. Zone 5, Sogod Cebu', 'Birthday Party', 30, 8, 'pickup', 0, 750, 960, 0, 0, 1710, 'pending', 0);
+
+-- Cancelled Bookings (1 record)
+INSERT INTO bookings (booking_ref, customer_name, customer_contact, event_date, event_time, venue_location, event_type, chairs, tables, delivery_type, distance_km, chair_cost, table_cost, labor_cost, fuel_cost, total_amount, status, is_read) VALUES
+('CTR-2025004', 'Pedro Bautista', '09501234567', DATE_ADD(CURDATE(), INTERVAL 10 DAY), '16:00:00', 'Talisay City', 'Fiesta', 300, 50, 'delivery', 12.00, 7500, 6000, 1650, 600, 15750, 'cancelled', 1);
+
+-- ==============================================
+-- VERIFY DATABASE
+-- ==============================================
+SELECT 'Database updated successfully!' AS Status;
+SELECT COUNT(*) as TotalAdmins FROM admin_users;
+SELECT status, COUNT(*) as Count, SUM(total_amount) as Revenue FROM bookings GROUP BY status;

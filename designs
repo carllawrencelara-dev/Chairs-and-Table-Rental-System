@@ -1,0 +1,162 @@
+Category	Icon Name	What it looks like
+Actions	fa-check-circle	✓ Solid checkmark
+fa-check-square	☑ Checkbox
+fa-pen	✎ Pen/edit
+fa-trash-alt	🗑 Trash
+fa-plus-circle	⊕ Add/plus
+fa-minus-circle	⊖ Remove/minus
+Navigation	fa-home	🏠 Home
+fa-arrow-left	← Back
+fa-arrow-right	→ Next
+fa-chevron-down	▼ Dropdown
+fa-bars	☰ Menu
+Communication	fa-envelope	✉ Email
+fa-phone	📞 Phone
+fa-bell	🔔 Notification
+fa-comment	💬 Message
+Business	fa-user	👤 User/profile
+fa-users	👥 Tea
+m/group
+fa-chart-line	📈 Revenue/stats
+fa-calendar-alt	📅 Calendar
+fa-clock	🕐 Time
+Files	fa-file-pdf	📄 PDF
+fa-download	⬇ Download
+fa-upload	⬆ Upload
+fa-print	🖨 Print
+Status	fa-check	✓ Success
+fa-times	✗ Close/error
+fa-exclamation-triangle	⚠ Warning
+fa-info-circle	ℹ Info
+
+fa-calendar-check	📅✅	Booking confirmation
+fa-calendar-plus	📅➕	Create booking
+fa-calendar-times	📅❌	Cancelled booking
+fa-chair	🪑	Chairs item
+fa-table	🪵	Tables item
+fa-truck	🚚	Delivery
+fa-box	📦	Pickup/Package
+fa-clipboard-list	📋	Booking list
+Payment & Money
+Icon Name	What it looks like	Use for
+fa-money-bill-wave	💵	Cash payment
+fa-credit-card	💳	Card payment
+fa-coins	🪙	Coins/change
+fa-receipt	🧾	Receipt/invoice
+fa-calculator	🧮	Calculate costs
+fa-percent	%	Discounts
+Status & Alerts
+Icon Name	What it looks like	Use for
+fa-circle-check	⭕✅	Accepted
+fa-circle-xmark	⭕❌	Rejected
+fa-circle-info	⭕ℹ	Information
+fa-triangle-exclamation	⚠️	Warning
+fa-spinner	⏳	Loading
+fa-hourglass-half	⌛	Pending/Waiting
+Admin & Security
+Icon Name	What it looks like	Use for
+fa-lock	🔒	Password/Secure
+fa-unlock	🔓	Unlock
+fa-key	🔑	Login/Password
+fa-shield-halved	🛡️	Security/Protection
+fa-user-shield	👤🛡️	Admin role
+fa-user-check	👤✅	Verified user
+Dashboard & Analytics
+Icon Name	What it looks like	Use for
+fa-chart-simple	📊	Simple chart
+fa-chart-column	📊	Column chart
+fa-chart-gantt	📊	Gantt chart
+fa-chart-line	📈	Line chart
+fa-chart-pie	🥧	Pie chart
+fa-chart-scatter	📉	Scatter plot
+fa-chart-area	📈	Area chart
+Calendar & Date
+Icon Name	What it looks like	Use for
+fa-calendar	📅	Date
+fa-calendar-week	📅	Weekly view
+fa-calendar-day	📅	Daily view
+fa-calendar-month	📅	Monthly view
+fa-calendar-year	📅	Yearly view
+fa-clock	🕐	Time
+Communication
+Icon Name	What it looks like	Use for
+fa-envelope	✉️	Email
+fa-envelope-open	📧	Open email
+fa-envelope-circle-check	✉️✅	Verified email
+fa-phone	📞	Phone
+fa-phone-volume	📞🔊	Call
+fa-sms	💬	Text message
+fa-message	💬	Chat
+File & Document
+Icon Name	What it looks like	Use for
+fa-file	📄	Document
+fa-file-pdf	📄📑	PDF file
+fa-file-excel	📊	Excel file
+fa-file-word	📄	Word file
+fa-file-image	🖼️	Image file
+fa-file-upload	📤	Upload
+fa-file-download	📥	Download
+fa-file-export	📤	Export
+fa-file-import	📥	Import
+Navigation & UI
+Icon Name	What it looks like	Use for
+fa-home	🏠	Homepage
+fa-home-lg	🏠	Homepage large
+fa-arrow-left	←	Back
+fa-arrow-right	→	Next
+fa-arrow-up	↑	Up
+fa-arrow-down	↓	Down
+fa-chevron-left	◀	Collapse
+fa-chevron-right	▶	Expand
+fa-chevron-up	▲	Up dropdown
+fa-chevron-down	▼	Down dropdown
+fa-search	🔍	Search
+fa-filter	🔽	Filter
+fa-sort	⇅	Sort
+fa-print	🖨️	Print
+fa-eye	👁️	View
+fa-eye-slash	🙈	Hide
+Action Buttons
+Icon Name	What it looks like	Use for
+fa-plus	➕	Add
+fa-minus	➖	Remove
+fa-plus-circle	⊕	Add circle
+fa-minus-circle	⊖	Remove circle
+fa-pen	✏️	Edit
+fa-pen-to-square	✏️📄	Edit form
+fa-trash	🗑️	Delete
+fa-trash-can	🗑️	Delete can
+fa-copy	📋	Copy
+fa-save	💾	Save
+fa-floppy-disk	💾	Save old style
+fa-undo	↩️	Undo
+fa-redo	↪️	Redo
+fa-refresh	🔄	Refresh
+Social Media
+Icon Name	What it looks like	Use for
+fa-facebook	f	Facebook
+fa-twitter	🐦	Twitter/X
+fa-instagram	📷	Instagram
+fa-tiktok	🎵	TikTok
+fa-youtube	▶️	YouTube
+fa-whatsapp	💬	WhatsApp
+fa-messenger	💬	Messenger
+fa-viber	📞	Viber
+Building & Location
+Icon Name	What it looks like	Use for
+fa-building	🏢	Corporate/Building
+fa-location-dot	📍	Location
+fa-map-marker	📌	Map marker
+fa-map-pin	📍	Pin
+fa-warehouse	🏭	Warehouse
+fa-store	🏪	Store/pickup
+Status & Rating
+Icon Name	What it looks like	Use for
+fa-star	⭐	Rating
+fa-star-half	⭐½	Half star
+fa-star-of-life	✨	Featured
+fa-circle	●	Radio/status
+fa-circle-dot	●	Selected radio
+fa-check	✓	Success
+fa-xmark	✗	Error
+fa-ban	🚫	Banned/Cancelled
